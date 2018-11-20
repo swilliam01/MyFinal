@@ -50,10 +50,7 @@ public class User {
 //    public void setRepos_url(ArrayList<Repos_url> repos_url) {
 //        this.repos_url = repos_url;
 //    }
-//
-//
-//
-//
+
 //    public ArrayList<String> getFollowing_url() {
 //        return following_url;
 //    }
@@ -87,10 +84,10 @@ public class User {
 
     @Override
     public String toString(){
-        return "{id="+id+
-                ",   Username= "+login+
-                ",   following= "+following+
-                ",   followers= " +followers+
+        return "User{id =  "+id+
+                ",   Username  = "+login+
+                ",   following  = "+following+
+                ",   followers  = " +followers+
                 /*"following:" +following_url+
                 "pulls_url" +repos_url+*/"}\n";
 //
