@@ -2,29 +2,40 @@ package com.example.demo;
 
 import javax.persistence.*;
 import java.util.ArrayList;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-@JsonIgnoreProperties(ignoreUnknown = true)
+//import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+//@JsonIgnoreProperties(ignoreUnknown = true)
+@Entity
 public class Repos {
-//   @Id
-//   @GeneratedValue(strategy = GenerationType.AUTO)
+   @Id
+   @GeneratedValue(strategy = GenerationType.AUTO)
    private long id;
    private String name;
    private String full_name;
-//   private ArrayList<String> languages_url;
+   private String language;
+   private String watchers_count;
 //   private ArrayList<String> collaborators_url;
 //   private ArrayList<String> pulls_url;
-   private long forks_count;
-   private long unique_views;
-   private long unique_cloners;
+   private String forks_count;
+//   private long unique_views;
+//   private long unique_cloners;
    //Repository traffic (unique visitors and unique cloners)
 
-   @ManyToMany
-   private User Owner;
+//   @ManyToMany
+//  private User Owner;
 
    public Repos() {
    }
 
-   public long getId() {
+    public Repos(String name, String full_name, String language, String watchers_count, String forks_count/*, User owner*/) {
+        this.name = name;
+        this.full_name = full_name;
+        this.language = language;
+        this.watchers_count = watchers_count;
+        this.forks_count = forks_count;
+       // this.Owner = owner;
+    }
+
+    public long getId() {
       return id;
    }
 
@@ -71,49 +82,66 @@ public class Repos {
 //   public void setPulls_url(ArrayList<String> pulls_url) {
 //      this.pulls_url = pulls_url;
 //   }
+//   public long getUnique_views() {
+//      return unique_views;
+//   }
+//
+//   public void setUnique_views(long unique_views) {
+//      this.unique_views = unique_views;
+//   }
+//
+//   public long getUnique_cloners() {
+//      return unique_cloners;
+//   }
+//
+//   public void setUnique_cloners(long unique_cloners) {
+//      this.unique_cloners = unique_cloners;
+//   }
 
-   public long getForks_count() {
+//   public User getOwner() {
+//      return Owner;
+//   }
+//
+//   public void setOwner(User owner) {
+//      Owner = owner;
+//   }
+
+
+
+   public String getLanguage() {
+      return language;
+   }
+
+   public void setLanguage(String language) {
+      this.language = language;
+   }
+
+   public String getWatchers_count() {
+      return watchers_count;
+   }
+
+   public void setWatchers_count(String watchers_count) {
+      this.watchers_count = watchers_count;
+   }
+
+   public String getForks_count() {
       return forks_count;
    }
 
-   public void setForks_count(long forks_count) {
+   public void setForks_count(String forks_count) {
       this.forks_count = forks_count;
    }
-
-   public long getUnique_views() {
-      return unique_views;
-   }
-
-   public void setUnique_views(long unique_views) {
-      this.unique_views = unique_views;
-   }
-
-   public long getUnique_cloners() {
-      return unique_cloners;
-   }
-
-   public void setUnique_cloners(long unique_cloners) {
-      this.unique_cloners = unique_cloners;
-   }
-
-   public User getOwner() {
-      return Owner;
-   }
-
-   public void setOwner(User owner) {
-      Owner = owner;
-   }
-
    @Override
-      public String toString(){
-         return "Repos_url{ id=" +id+
-                 "Name="+name+"Full Name=" +full_name+
-//                 "Languages used:" +languages_url+
+   public String toString(){
+      return "\nRepos{ id = " +id+
+              ",  Name="+name+",  Full Name = " +full_name+
+                 ",  Languages used = " +language+
+              ",  Watchers = "+watchers_count+
 //                 "Collaborators:" +collaborators_url+
 //                 "pulls_url" +pulls_url+
-                 "Forks" +forks_count+"}";
+              ",  Forks = " +forks_count+"}";
 //                 "unique views" +unique_views+
 //                 "unique cloners"+unique_cloners+"}";
-      }
 
+   }
 }

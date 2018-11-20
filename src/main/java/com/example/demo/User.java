@@ -2,13 +2,14 @@ package com.example.demo;
 
 import javax.persistence.*;
 import java.util.ArrayList;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-
-@JsonIgnoreProperties(ignoreUnknown = true)
+//import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+//
+//@JsonIgnoreProperties(ignoreUnknown = true)
+@Entity
 public class User {
 
-//    @Id
-//    @GeneratedValue(strategy= GenerationType.AUTO)
+    @Id
+    @GeneratedValue(strategy= GenerationType.AUTO)
     private long id;
 
     private String login;
@@ -18,11 +19,18 @@ public class User {
 //    private ArrayList<String> following_url;
 //    private ArrayList<String> followers_url;
 
-   // @ManyToMany
-    //private ArrayList<Repos_url> repos_url;
+//   @ManyToMany
+//    private ArrayList<Repos> repos_url;
 
 
     public User() {
+    }
+
+    public User(String login, String following, String followers /*, ArrayList<Repos> repos_url*/) {
+        this.login = login;
+        this.following = following;
+        this.followers = followers;
+        //this.repos_url = repos_url;
     }
 
     public long getId() {
@@ -43,17 +51,14 @@ public class User {
 
 
 
-//    public ArrayList<Repos_url> getRepos_url() {
+//    public ArrayList<Repos> getRepos_url() {
 //        return repos_url;
 //    }
 //
-//    public void setRepos_url(ArrayList<Repos_url> repos_url) {
+//    public void setRepos_url(ArrayList<Repos> repos_url) {
 //        this.repos_url = repos_url;
 //    }
-//
-//
-//
-//
+
 //    public ArrayList<String> getFollowing_url() {
 //        return following_url;
 //    }
@@ -87,10 +92,10 @@ public class User {
 
     @Override
     public String toString(){
-        return "{id="+id+
-                ",   Username= "+login+
-                ",   following= "+following+
-                ",   followers= " +followers+
+        return "User{id =  "+id+
+                ",   Username  = "+login+
+                ",   following  = "+following+
+                ",   followers  = " +followers+
                 /*"following:" +following_url+
                 "pulls_url" +repos_url+*/"}\n";
 //
