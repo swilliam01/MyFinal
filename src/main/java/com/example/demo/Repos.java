@@ -20,8 +20,14 @@ public class Repos {
 //   private long unique_cloners;
    //Repository traffic (unique visitors and unique cloners)
 
+    @ManyToOne (fetch = FetchType.EAGER)
+    //@JoinColumn(name = "user_id")
+    private User user;
 //   @ManyToMany
+
 //  private User Owner;
+
+
 
    public Repos() {
    }
@@ -98,13 +104,7 @@ public class Repos {
 //      this.unique_cloners = unique_cloners;
 //   }
 
-//   public User getOwner() {
-//      return Owner;
-//   }
-//
-//   public void setOwner(User owner) {
-//      Owner = owner;
-//   }
+
 
 
 
@@ -144,4 +144,12 @@ public class Repos {
 //                 "unique cloners"+unique_cloners+"}";
 
    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
 }

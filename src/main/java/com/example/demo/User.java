@@ -2,6 +2,8 @@ package com.example.demo;
 
 import javax.persistence.*;
 import java.util.ArrayList;
+import java.util.Collection;
+
 //import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 //
 //@JsonIgnoreProperties(ignoreUnknown = true)
@@ -22,6 +24,12 @@ public class User {
 //   @ManyToMany
 //    private ArrayList<Repos> repos_url;
 
+
+
+    @ManyToMany(fetch = FetchType.EAGER)
+    @JoinTable(joinColumns = @JoinColumn(name = "user_id"),
+            inverseJoinColumns = @JoinColumn(name = "repos_id"))
+    private Collection<Repos> repos;
 
     public User() {
     }
@@ -50,7 +58,13 @@ public class User {
     }
 
 
+    public Collection<Repos> getRepos() {
+        return repos;
+    }
 
+    public void setRepos(Collection<Repos> repos) {
+        this.repos = repos;
+    }
 //    public ArrayList<Repos> getRepos_url() {
 //        return repos_url;
 //    }

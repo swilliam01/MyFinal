@@ -37,14 +37,19 @@ public class MainController {
             return "homepage";
         }
 
-
-        @GetMapping("/addRepos")
+    @RequestMapping("/repos")
+    public String Repos(Model model) {
+        model.addAttribute("repos",reposRepository.findAll());
+//
+        return "homepage";
+    }
+        @GetMapping("/repos")
         public String reposForm(Model model) {
             model.addAttribute("repos", new Repos());
             return "reposform";
         }
 
-        @PostMapping("/addRepos")
+        @PostMapping("/repos")
         public String processForm(@ModelAttribute("repos") Repos repos){
 
 

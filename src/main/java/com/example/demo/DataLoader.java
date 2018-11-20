@@ -30,17 +30,17 @@ import java.util.Arrays;
 
            // boolean rundataloader= false;
 //            Repos userRepos= reposRepository.findByOwner("MelakMinlargilih");
-//            Repos userRepos1= reposRepository.findByName("Week9ChallengebetterBullhornMessagingApp");
+            Repos userRepos1= reposRepository.findByName("Week9ChallengebetterBullhornMessagingApp");
 
 
            // if (rundataloader){
 
                 User user = new User("MelakMinlargilih","2","2");
-                //user.setRepos_url(Arrays.asList(userRepos1));
+                user.setRepos(Arrays.asList(userRepos1));
                 userRepository.save(user);
 
                 Repos repos = new Repos("Week9ChallengebetterBullhornMessagingApp","MelakMinlargilih/Week9ChallengebetterBullhornMessagingApp","JAVA","1","0"/*,"MelakMinlargilih"*/);
-                //Repos.setOwner(user);
+                repos.setUser(user);
                 reposRepository.save(repos);
 
             //}
