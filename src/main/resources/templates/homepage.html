@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <th:block th:insert="base :: header"></th:block>
+    <style>
+        .jumbotron {
+            background-color: gainsboro;
+        }
+        .nav{
+            color: black;
+            border-bottom-style: outset;
+            text-align: center;
+            padding: 0px;
+        }
+        .container{
+            background-color: white;
+        }
+    </style>
+</head>
+<body>
+<div th:replace="base :: navlinks"></div>
+<div class="jumbotron text-center">
+    <h1>JBCSep2018</h1>
+</div>
+<div class="container">
+
+    <ul class="nav">
+        <li><h3>Members List <span class="w3-badge w3-small w3-gray w3-padding">21</span></h3></li>
+    </ul><br>
+    <ul class="w3-ul w3-hoverable w3-large">
+        <li><a href="#">Member 1</a></li>
+        <li><a href="#">Member 2</a></li>
+        <li><a href="#">Member 3</a></li>
+        <li><a href="#">Member 4</a></li>
+        <li><a href="#">Member 5</a></li>
+    </ul>
+</div>
+</body>
+</html>
