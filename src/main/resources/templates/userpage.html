@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <th:block th:insert="base :: header"></th:block>
+    <style>
+        .nav{
+            color: black;
+            border-bottom-style: outset;
+            text-align: center;
+            padding: 0px;
+        }
+        .leftcolumn {
+            width: 100%;
+            padding: 0;
+        }
+        .container{
+            background-color: whitesmoke;
+        }
+    </style>
+</head>
+<body>
+<div th:replace="base :: navlinks"></div>
+<div class="container">
+     <div class="row">
+        <div class="column">
+            <div class="card text-center">
+                <h3>swilliam01</h3>
+            </div>
+        </div>
+     </div>
+
+        <div class="column">
+            <div class="card">
+                <ul class="nav">
+                    <li><h4>Repositories</h4></li>
+                    <li><h4>Followers<span class="w3-badge w3-small w3-gray w3-padding">0</span></h4></li>
+                    <li><h4>Following<span class="w3-badge w3-small w3-gray w3-padding">0</span></h4></li>
+                </ul>
+            </div>
+        </div>
+                <ul class="w3-ul w3-hoverable w3-large">
+                    <li>Repo 1</li>
+                    <li>Repo 2</li>
+                    <li>Repo 3</li>
+                    <li>Repo 4</li>
+                </ul>
+</div>
+</body>
+</html>

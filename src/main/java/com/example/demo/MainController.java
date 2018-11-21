@@ -33,7 +33,7 @@ public class MainController {
         public String Home(Model model) {
             model.addAttribute("users",userRepository.findAll());
 //
-            return "homepage";
+            return "userpage";
         }
 
     @RequestMapping("/repos")
