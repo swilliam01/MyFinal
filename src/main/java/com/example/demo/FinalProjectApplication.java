@@ -1,5 +1,6 @@
 package com.example.demo;
 
+import com.sun.deploy.net.HttpResponse;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;
@@ -12,6 +13,7 @@ import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.client.RestTemplate;
 
+import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
 
@@ -23,14 +25,14 @@ public class FinalProjectApplication {
         SpringApplication.run(FinalProjectApplication.class, args);
     }
 
-//    @Bean
-//    public RestTemplate restTemplate(RestTemplateBuilder builder) {
-//        return builder.build();
-//    }
-//
-//    @Bean
-//    public CommandLineRunner run(RestTemplate restTemplate) throws Exception {
-//        return args -> {
+    @Bean
+    public RestTemplate restTemplate(RestTemplateBuilder builder) {
+        return builder.build();
+    }
+
+    @Bean
+    public CommandLineRunner run(RestTemplate restTemplate) throws Exception {
+        return args -> {
 //
 //
 //            User user = restTemplate.getForObject("https://api.github.com/users/MelakMinlargilih", User.class);
@@ -79,5 +81,6 @@ public class FinalProjectApplication {
 //        //pulls
 //        //GET /repos/:owner/:repo/pulls
 //
-//    }
+        };
+    }
 }

@@ -4,10 +4,33 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <th:block th:insert="base :: header"></th:block>
-
+    <style>
+        .nav{
+            color: black;
+            border-bottom-style: outset;
+            text-align: left;
+            padding: 0px;
+        }
+    </style>
 </head>
 <body>
 <div th:replace="base :: navlinks"></div>
+<div class="container">
+<div class="jumbotron">
+    <h2 align="center">Repo 1</h2>
 
+    <ul class="nav">
+        <li><h4>Forks()</h4></li>
+        <li><h4>Pull Requests()</h4></li>
+        <li><h4>Contributors()</h4></li>
+    </ul>
+</div>
+    <ul class="w3-ul w3-bordered w3-hoverable">
+        <li>File 1</li>
+        <li>File 2</li>
+        <li>File 3</li>
+    </ul>
+
+</div>
 </body>
 </html>

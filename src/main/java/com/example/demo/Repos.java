@@ -65,7 +65,7 @@ public class Repos {
       this.full_name = full_name;
    }
 
-//   public ArrayList<String> getLanguages_url() {
+    //   public ArrayList<String> getLanguages_url() {
 //      return languages_url;
 //   }
 //
@@ -131,6 +131,7 @@ public class Repos {
    public void setForks_count(String forks_count) {
       this.forks_count = forks_count;
    }
+
    @Override
    public String toString(){
       return "\nRepos{ id = " +id+
