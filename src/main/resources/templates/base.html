@@ -28,9 +28,20 @@
                 padding: 30px;
             }
             .jumbotron{
-                background-image:url('https://images.unsplash.com/photo-1518515344518-668eb0c53353?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=5c02d5bd8de279db1a2f74ea59f9283d&auto=format&fit=crop&w=1350&q=80');
+                background-image:url('https://images.unsplash.com/photo-1457129962825-adcaea7406c3?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=edbc7fe5a58bf9607535d2afd8b73523&auto=format&fit=crop&w=634&q=80');
+                background-repeat: no-repeat;
+                background-size: cover;
             }
-
+            .footer{
+                position: fixed;
+                left: 0;
+                bottom: 0;
+                width: 100%;
+                background-color: black;
+                padding: 0px;
+                color: white;
+                text-align: left;
+            }
         </style>
     </th:block>
 </head>
@@ -45,4 +56,9 @@
     </div>
 </div>
 </body>
+<div th:fragment="footer">
+    <div class="footer">
+        <p style="font-style: italic; text-align: left">&#169; <b>Taurus Group</b></p>
+    </div>
+</div>
 </html>

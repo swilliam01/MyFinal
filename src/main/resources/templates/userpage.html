@@ -15,29 +15,33 @@
             width: 100%;
             padding: 0;
         }
+
     </style>
 </head>
 <body>
 <div th:replace="base :: navlinks"></div>
 <div class="container">
     <div class="jumbotron">
-    <h2 align="center">swilliam01</h2>
+    <h1 style="font-style: italic" align="center"><b><u>swilliam01</u></b></h1><br>
         <div class="column">
             <div class="card">
                 <ul class="nav">
-                    <li><h4>Repositories</h4></li>
                     <li><h4>Followers<span class="w3-badge w3-small w3-gray w3-padding">0</span></h4></li>
                     <li><h4>Following<span class="w3-badge w3-small w3-gray w3-padding">0</span></h4></li>
                 </ul>
             </div>
         </div>
     </div>
-                <ul class="w3-ul w3-hoverable w3-large">
+    <ul class="nav">
+        <li><h3><b>Repositories</b></h3></li>
+    </ul>
+    <ul class="w3-ul w3-hoverable w3-large">
                     <li>Repo 1</li>
                     <li>Repo 2</li>
                     <li>Repo 3</li>
                     <li>Repo 4</li>
                 </ul>
 </div>
+<div th:replace="base :: footer"></div>
 </body>
 </html>
